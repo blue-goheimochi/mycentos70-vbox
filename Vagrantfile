@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # Install chef
-  config.vm.provision :shell, :inline => "curl -L 'https://www.getchef.com/chef/install.sh' | sudo bash"
+  config.vm.provision :shell, :inline => "curl -L 'https://omnitruck.chef.io/install.sh' | sudo bash"
 
   # provisioning with chef solo.
   config.vm.provision :chef_solo do |chef|
@@ -22,9 +22,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "yum"
     chef.add_recipe "ntp"
     chef.add_recipe "nkf"
+    chef.add_recipe "epel"
     chef.add_recipe "remi"
     chef.add_recipe "rpmforge"
-    chef.add_recipe "epel"
   end
 
 end
