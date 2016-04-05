@@ -1,4 +1,4 @@
-CentOS6.5のboxファイルをベースにして、  
+CentOS7.0のboxファイルをベースにして、  
 `yum update`など時間がかかる処理や初期設定をした状態で、  
 boxファイルとして保存する。
 
@@ -15,11 +15,11 @@ boxファイルを作成＆登録する。
     $ vagrant halt
     $ rm -rf package.box
     $ vagrant package
-    $ vagrant box remove mycentos65-vbox
-    $ vagrant box add mycentos65-vbox package.box
+    $ vagrant box remove mycentos70-vbox
+    $ vagrant box add mycentos70-vbox package.box
 
 ## Usage
 
 Vagrantfileでboxファイルを指定する。
 
-    config.vm.box = "mycentos65-vbox"
+    config.vm.box = "mycentos70-vbox"
